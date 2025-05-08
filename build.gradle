@@ -18,6 +18,9 @@ dependencies {
 	implementation 'org.hibernate.orm:hibernate-core:6.0.2.Final'
 	implementation 'mysql:mysql-connector-java:8.0.33'
 
+	// error handler
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
+
 	// QueryDSL dependencies
 	implementation 'com.querydsl:querydsl-jpa:5.0.0:jakarta'
 	annotationProcessor "com.querydsl:querydsl-apt:5.0.0:jakarta"
