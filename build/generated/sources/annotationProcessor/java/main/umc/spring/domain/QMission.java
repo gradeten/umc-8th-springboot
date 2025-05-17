@@ -62,7 +62,7 @@ public class QMission extends EntityPathBase<Mission> {
 
     public QMission(Class<? extends Mission> type, PathMetadata metadata, PathInits inits) {
         super(type, metadata, inits);
-        this.restaurant = inits.isInitialized("restaurant") ? new QRestaurant(forProperty("restaurant")) : null;
+        this.restaurant = inits.isInitialized("restaurant") ? new QRestaurant(forProperty("restaurant"), inits.get("restaurant")) : null;
     }
 
 }

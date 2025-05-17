@@ -50,7 +50,7 @@ public class MissionRepositoryImpl implements MissionRepositoryCustom {
                         restaurant.name.as("restaurantName"),
                         mission.price.as("restaurantPrice"),
                         mission.dueDate.as("dueDate"),
-                        restaurant.type.as("restaurantType")
+                        restaurant.foodCategory.as("restaurantType")
                 ))
                 .from(mission)
                 .join(mission.restaurant, restaurant)

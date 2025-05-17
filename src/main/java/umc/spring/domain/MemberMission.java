@@ -2,12 +2,17 @@ package umc.spring.domain;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.ColumnDefault;
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
 import umc.spring.domain.common.BaseEntity;
 import umc.spring.domain.enums.MissionStatus;
 
 @Entity
 @Getter
 @Builder
+@DynamicUpdate
+@DynamicInsert
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
 public class MemberMission extends BaseEntity {
@@ -16,8 +21,9 @@ public class MemberMission extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @ColumnDefault("ONGOING")
     @Enumerated(EnumType.STRING)
-    @Column(nullable = false, columnDefinition = "VARCHAR(15) DEFAULT 'ONGOING'")
+    @Column(nullable = false)
     private MissionStatus status;
 
     @ManyToOne(fetch = FetchType.LAZY)
