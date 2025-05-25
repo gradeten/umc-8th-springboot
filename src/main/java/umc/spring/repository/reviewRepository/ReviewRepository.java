@@ -1,8 +1,14 @@
 package umc.spring.repository.reviewRepository;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
+import umc.spring.domain.Member;
+import umc.spring.domain.Restaurant;
 import umc.spring.domain.Review;
 
 public interface ReviewRepository extends JpaRepository<Review, Long> {
-    // 추가적인 메소드가 필요하면 여기에 정의할 수 있습니다.
+    Page<Review> findAllByRestaurant(Restaurant restaurant, Pageable pageable);
+    Page<Review> findAllByMember(Member member, Pageable pageable);
 }

@@ -10,4 +10,7 @@ import umc.spring.dto.MissionsRequestDTO;
 public interface MemberMissionCommandService {
     @Transactional
     MemberMission joinMemberMission(MemberMissionRequestDTO.@Valid MemberMissionJoinDTO request);
+
+    @Transactional
+    void completeMission(Long memberMissionId);
 }
