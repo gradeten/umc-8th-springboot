@@ -1,3 +1,6 @@
+logging:
+  level:
+    org.springframework.boot.context.properties.bind: DEBUG
 spring:
   datasource:
     url: ${DB_URL}
@@ -17,3 +20,8 @@ spring:
         hbm2ddl:
           auto: update
         default_batch_fetch_size: 1000
+  jwt:
+    token:
+      secretKey: O3VvYjFka29ma3Jlc2Z2ZGNrc2x2M2Z1bHN3ZWQxY2Y=
+      expiration:
+        access: 14400000

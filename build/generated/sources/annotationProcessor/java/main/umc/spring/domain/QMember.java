@@ -43,6 +43,8 @@ public class QMember extends EntityPathBase<Member> {
 
     public final StringPath name = createString("name");
 
+    public final StringPath password = createString("password");
+
     public final StringPath phone_number = createString("phone_number");
 
     public final BooleanPath place_consent = createBoolean("place_consent");
@@ -50,6 +52,8 @@ public class QMember extends EntityPathBase<Member> {
     public final NumberPath<Integer> point = createNumber("point", Integer.class);
 
     public final ListPath<Review, QReview> reviewList = this.<Review, QReview>createList("reviewList", Review.class, QReview.class, PathInits.DIRECT2);
+
+    public final EnumPath<umc.spring.domain.enums.Role> role = createEnum("role", umc.spring.domain.enums.Role.class);
 
     public final StringPath specAddress = createString("specAddress");
 
